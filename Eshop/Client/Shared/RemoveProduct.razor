@@ -1,0 +1,16 @@
+﻿@using System.Threading
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager 
+
+<a @onclick="() => DeleteProductButtonHandler(Id)">Delete</a>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    async Task DeleteProductButtonHandler(int id)
+    {
+        await ProductService.DeleteProduct(Id);
+        Console.WriteLine($"Id = {Id} is clicked...");
+    }
+}

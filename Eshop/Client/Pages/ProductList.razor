@@ -32,7 +32,10 @@ else
                    </td>
                    <td>
                        @*<a class="btn btn-danger" href="productdelete/@item.Id">Delete</a>*@
-                       <button type="button" class="btn btn-danger" @onclick="RemoveProduct"></button>
+                       @*<button type="button" class="btn btn-danger" @onclick="RemoveProduct"></button>*@
+                       <div class="btn btn-danger">
+                            <RemoveProduct Id="@item.Id" />
+                       </div>
                    </td>
                </tr>
            }
@@ -42,8 +45,6 @@ else
 
 
 @code {
-    public int Id { get; set; }
-
     List<Product> products = new List<Product>();
 
     protected override async Task OnInitializedAsync()
@@ -54,12 +55,5 @@ else
     void BtnAddNewProduct()
     {
         NavigationManager.NavigateTo("addproduct");
-        Console.WriteLine("burası çalışıyor");
-    }
-
-    async Task RemoveProduct()
-    {
-        await ProductService.DeleteProduct(Id);
-        Console.WriteLine($"{Id} numaralı ürün silindi");
     }
 }

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Eshop.Client.Pages
+namespace Eshop.Client.Shared
 {
     #line hidden
     using System;
@@ -96,8 +96,14 @@ using Eshop.Client.Service;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/productlist")]
-    public partial class ProductList : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\Shared\RemoveProduct.razor"
+using System.Threading;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class RemoveProduct : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,18 +111,15 @@ using Eshop.Client.Service;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\Pages\ProductList.razor"
+#line 7 "C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\Shared\RemoveProduct.razor"
        
-    List<Product> products = new List<Product>();
+    [Parameter]
+    public int Id { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    async Task DeleteProductButtonHandler(int id)
     {
-        products = await ProductService.GetProducts();
-    }
-
-    void BtnAddNewProduct()
-    {
-        NavigationManager.NavigateTo("addproduct");
+        await ProductService.DeleteProduct(Id);
+        Console.WriteLine($"Id = {Id} is clicked...");
     }
 
 #line default

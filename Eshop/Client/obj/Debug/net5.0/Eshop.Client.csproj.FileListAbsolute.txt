@@ -642,3 +642,5 @@ C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0
 C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\Razor\Pages\AddProduct.razor.g.cs
 C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\RazorDeclaration\Pages\DeletePrd.razor.g.cs
 C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\Razor\Pages\DeletePrd.razor.g.cs
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\RazorDeclaration\Shared\RemoveProduct.razor.g.cs
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\Razor\Shared\RemoveProduct.razor.g.cs

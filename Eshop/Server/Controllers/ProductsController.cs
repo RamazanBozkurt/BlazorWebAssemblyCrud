@@ -49,15 +49,48 @@ namespace Eshop.Server.Controllers
             return Ok(product);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public IActionResult DeleteProduct(int id)
         {
-            var deletedProduct = _context.Products.Where(p => p.Id == id).FirstOrDefault();
+            try
+            {
+                var deletedProduct = GetProductById(id);
 
-            _context.Products.Remove(deletedProduct);
+                if(deletedProduct == null)
+                {
+                    return NotFound($"Product with Id = {id} is not found!");
+                }
+                else
+                {
+                    var test = DeleteProductFromDatabase(id);
+                    return Ok(test);
+                }
+            }
+            catch (System.Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error deleting data");
+            }
+        }
+
+        public Product GetProductById(int id)
+        {
+            return _context.Products.FirstOrDefault(p => p.Id == id);
+        }
+
+        public Product DeleteProductFromDatabase(int id)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
+
+            if(product == null)
+            {
+                return null;
+            }
+
+            _context.Products.Remove(product);
             _context.SaveChanges();
 
-            return Ok();
+            return product;
         }
     }
 }
