@@ -96,15 +96,5 @@ namespace Eshop.Server.Controllers
 
             return product;
         }
-
-        [Route("api/reqres")]
-        public IActionResult GetReqresData()
-        {
-            //await HttpClient.GetFromJsonAsync<List<Generic>>("https://reqres.in/api/users");
-
-            var reqres = _client.GetStringAsync("https://reqres.in/api/users");
-
-            return Ok(reqres);
-        }
     }
 }
