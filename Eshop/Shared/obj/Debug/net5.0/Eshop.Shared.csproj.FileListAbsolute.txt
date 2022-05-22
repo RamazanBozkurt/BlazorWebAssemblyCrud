@@ -1,0 +1,12 @@
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\bin\Debug\net5.0\Eshop.Shared.deps.json
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\bin\Debug\net5.0\Eshop.Shared.dll
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\bin\Debug\net5.0\ref\Eshop.Shared.dll
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\bin\Debug\net5.0\Eshop.Shared.pdb
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.csproj.AssemblyReference.cache
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.AssemblyInfoInputs.cache
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.AssemblyInfo.cs
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.dll
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\ref\Eshop.Shared.dll
+C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Shared\obj\Debug\net5.0\Eshop.Shared.pdb

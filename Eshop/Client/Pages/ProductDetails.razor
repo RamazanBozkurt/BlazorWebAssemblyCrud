@@ -1,0 +1,49 @@
+﻿@page "/productdetails/{id:int}"
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
+
+<h3>ProductDetails</h3>
+
+@*<form>
+    <input type="text" placeholder="@product.Id" @bind="product.Id" hidden/>
+    <input type="text" placeholder="@product.Name" @bind="product.Name"/>
+    <input type="text" placeholder="@product.Description" @bind="product.Description"/>
+
+    <button type="submit" @onclick="HandleValidSubmit">Save</button>
+</form>*@
+
+<EditForm Model="@product" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <input @bind="product.Id" hidden/>
+    <label>
+        Product Name
+        <InputText id="name" @bind-Value="product.Name" />
+    </label>
+    <label>
+        Product Description
+        <InputText id="description" @bind-Value="product.Description" />
+    </label>
+
+    <button type="submit">Save</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    Product product = new Product();
+
+    protected override async Task OnInitializedAsync()
+    {
+        product = await ProductService.GetProduct(id);
+    }
+
+    async Task HandleValidSubmit()
+    {
+        //await ProductService.UpdateProduct(product, product.Id);
+        await HttpClient.PutAsJsonAsync("api/products", product);
+        NavigationManager.NavigateTo("productlist");
+    }
+}

@@ -1,0 +1,65 @@
+﻿@page "/productlist"
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
+
+<h3>ProductList</h3>
+
+<a class="btn btn-primary my-5" @onclick="BtnAddNewProduct">Add New Product</a>
+
+@if(products == null)
+{
+    <span>Loading ...</span>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in products)
+           {
+               <tr>
+                   <td>@item.Id</td>
+                   <td>@item.Name</td>
+                   <td>@item.Description</td>
+                   <td>
+                       <a class="btn btn-primary" href="productdetails/@item.Id">Details</a>
+                   </td>
+                   <td>
+                       @*<a class="btn btn-danger" href="productdelete/@item.Id">Delete</a>*@
+                       <button type="button" class="btn btn-danger" @onclick="RemoveProduct"></button>
+                   </td>
+               </tr>
+           }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    public int Id { get; set; }
+
+    List<Product> products = new List<Product>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductService.GetProducts();
+    }
+
+    void BtnAddNewProduct()
+    {
+        NavigationManager.NavigateTo("addproduct");
+        Console.WriteLine("burası çalışıyor");
+    }
+
+    async Task RemoveProduct()
+    {
+        await ProductService.DeleteProduct(Id);
+        Console.WriteLine($"{Id} numaralı ürün silindi");
+    }
+}

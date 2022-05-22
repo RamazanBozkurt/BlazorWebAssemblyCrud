@@ -1,0 +1,36 @@
+﻿@page "/addproduct"
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
+
+<h3>AddProduct</h3>
+
+<EditForm Model="@product" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <label>
+        Product Name
+        <InputText id="name" @bind-Value="product.Name" />
+    </label>
+    <label>
+        Product Description
+        <InputText id="description" @bind-Value="product.Description" />
+    </label>
+
+    <button type="submit">Save</button>
+</EditForm>
+
+@code {
+    Product product = new Product();
+    List<Product> products = new List<Product>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductService.GetProducts();
+    }
+
+    async Task HandleValidSubmit()
+    {
+        await ProductService.AddProduct(product);
+        NavigationManager.NavigateTo("productlist");
+    }
+}

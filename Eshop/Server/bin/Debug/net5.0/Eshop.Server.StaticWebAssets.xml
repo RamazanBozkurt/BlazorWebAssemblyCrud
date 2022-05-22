@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\wwwroot\" />
+</StaticWebAssets>

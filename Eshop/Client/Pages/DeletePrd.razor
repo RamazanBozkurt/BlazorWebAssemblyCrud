@@ -1,0 +1,18 @@
+﻿@page "/productdelete/{id:int}"
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager
+
+<h3>DeletePrd</h3>
+
+<button class="btn btn-danger" type="submit" @onclick="Delete">Sil</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    async Task Delete()
+    {
+        await ProductService.DeleteProduct(Id);
+        NavigationManager.NavigateTo("/productlist");
+    }
+}

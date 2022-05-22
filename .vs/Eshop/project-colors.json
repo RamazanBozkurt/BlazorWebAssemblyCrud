@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "80f0f8ce-ff82-4434-9efe-b747d7da727c": {
+      "ProjectGuid": "80f0f8ce-ff82-4434-9efe-b747d7da727c",
+      "DisplayName": "Eshop.Server",
+      "ColorIndex": 0
+    },
+    "c8e0cd01-73c5-413b-a123-ca3f62fabfab": {
+      "ProjectGuid": "c8e0cd01-73c5-413b-a123-ca3f62fabfab",
+      "DisplayName": "Eshop.Client",
+      "ColorIndex": 1
+    },
+    "27027781-3ece-472c-93c4-8224f9a3d8b8": {
+      "ProjectGuid": "27027781-3ece-472c-93c4-8224f9a3d8b8",
+      "DisplayName": "Eshop.Shared",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
