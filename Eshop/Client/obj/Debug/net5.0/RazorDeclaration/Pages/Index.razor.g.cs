@@ -104,6 +104,52 @@ using Eshop.Client.Service;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 41 "C:\Users\ramaz\Desktop\WebAssemblyTest\Test2\Eshop\Eshop\Client\Pages\Index.razor"
+      
+    List<Generic> reqres = new List<Generic>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await HttpClient.GetStringAsync("api/reqres");
+    }
+
+    public class Generic
+    {
+        public Datum Datum { get; set; }
+        public Root Root { get; set; }
+        public Support Support { get; set; }
+    }
+
+    public class Datum
+    {
+        public int id { get; set; }
+        public string email { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string avatar { get; set; }
+    }
+
+    public class Root
+    {
+        public int page { get; set; }
+        public int per_page { get; set; }
+        public int total { get; set; }
+        public int total_pages { get; set; }
+        public List<Datum> data { get; set; }
+        public Support support { get; set; }
+    }
+
+    public class Support
+    {
+        public string url { get; set; }
+        public string text { get; set; }
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient HttpClient { get; set; }
     }
 }
 #pragma warning restore 1591

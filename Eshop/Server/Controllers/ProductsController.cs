@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 
 namespace Eshop.Server.Controllers
 {
@@ -10,9 +12,11 @@ namespace Eshop.Server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public ProductsController(ApplicationDbContext context)
+        private readonly HttpClient _client;
+        public ProductsController(ApplicationDbContext context, HttpClient client)
         {
             _context = context;
+            _client = client;
         }
 
         [HttpGet]
@@ -91,6 +95,16 @@ namespace Eshop.Server.Controllers
             _context.SaveChanges();
 
             return product;
+        }
+
+        [Route("api/reqres")]
+        public IActionResult GetReqresData()
+        {
+            //await HttpClient.GetFromJsonAsync<List<Generic>>("https://reqres.in/api/users");
+
+            var reqres = _client.GetStringAsync("https://reqres.in/api/users");
+
+            return Ok(reqres);
         }
     }
 }
